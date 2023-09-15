@@ -182,6 +182,7 @@ class Node /* LinkedListNode */{
 
 
         }
+        // remove loop from ll
         void removeLoop(Node* head){
             if(head == NULL)
                  return;
@@ -194,6 +195,46 @@ class Node /* LinkedListNode */{
             }
                 temp->next = NULL;
         }
+        // Remove  duplicate from a sorted ll
+        Node* uniqueSortedLL(Node * head){
+        //empty ll
+        if(head == NULL)
+            return NULL;
+
+        //non empty ll
+        Node* curr = head;
+        
+        while(curr != NULL){
+
+            if((curr -> next != NULL) && curr -> data == curr-> next -> data)
+            {
+                Node* next_next = curr->next->next;
+                Node* nodeToDelete = curr-> next;
+                delete(nodeToDelete);
+                curr -> next = next_next;
+            }
+            else
+            {
+                //not equal
+                curr = curr -> next;
+            }
+        }
+        return head;
+}
+        //HomeWork
+        // Remove duplicate from unsorted ll
+        // O(n*2) -> Using to loops
+        // O(n)   -> First sort in (nlogn) quick sort 
+        // O(n)   -> map
+        // Split circular linked list into two halfs
+
+
+
+
+
+
+
+
 
 
 
@@ -223,36 +264,37 @@ int main(){
     insertAtTail(tail, 12);
     // print(head);
     insertAtTail(tail, 15);
+    insertAtTail(tail, 12);
+    insertAtTail(tail, 15);
    
    
     //inserting node at nth position
-    insertAtPosition(tail, head, 4, 22);
-    // print(head);
-    // insertAtPosition(tail,head, 5, 113);
-    // print(head);
-    tail->next= head->next;
-    cout << "Head: " << head -> data << endl;
-    cout << "Tail: " << tail -> data << endl;
+    // insertAtPosition(tail, head, 4, 22);
+    // // print(head);
+    // // insertAtPosition(tail,head, 5, 113);
+    // // print(head);
+    // // tail->next= head->next;
+    // cout << "Tail: " << tail -> data << endl;
 
-     if(detectLoop(head))
-    {
-        cout << "Cycle is present" << endl;
-    }
-    else{
-        cout << "Cycle is not present" << endl;
+    //  if(detectLoop(head))
+    // {
+    //     cout << "Cycle is present" << endl;
+    // }
+    // else{
+    //     cout << "Cycle is not present" << endl;
 
-    }
-      if(floydDetectLoop(head) != NULL)
-    {
-        cout << "Cycle is present" << endl;
-    }
-    else{
-        cout << "Cycle is not present" << endl;
+    // }
+    //   if(floydDetectLoop(head) != NULL)
+    // {
+    //     cout << "Cycle is present" << endl;
+    // }
+    // else{
+    //     cout << "Cycle is not present" << endl;
 
-    }
-    Node* getLoopNode = getStartingNode(head);
-    cout << "This is starting node " << getLoopNode->data << " of the loop" << endl;
-    removeLoop(head);
+    // }
+    // Node* getLoopNode = getStartingNode(head);
+    // cout << "This is starting node " << getLoopNode->data << " of the loop" << endl;
+    // removeLoop(head);
     print(head);
 
 }
