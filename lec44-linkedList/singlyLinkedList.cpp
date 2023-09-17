@@ -196,7 +196,7 @@ class Node /* LinkedListNode */{
                 temp->next = NULL;
         }
         // Remove  duplicate from a sorted ll
-        Node* uniqueSortedLL(Node * head){
+        Node* uniqueSortedLL(Node * &head){
         //empty ll
         if(head == NULL)
             return NULL;
@@ -210,6 +210,7 @@ class Node /* LinkedListNode */{
             {
                 Node* next_next = curr->next->next;
                 Node* nodeToDelete = curr-> next;
+                cout << "Deleted node " << nodeToDelete->data << endl; 
                 delete(nodeToDelete);
                 curr -> next = next_next;
             }
@@ -228,16 +229,6 @@ class Node /* LinkedListNode */{
         // O(n)   -> map
         // Split circular linked list into two halfs
 
-
-
-
-
-
-
-
-
-
-
 int main(){
     // created a new node
     Node * node1 = new Node(10);
@@ -250,12 +241,12 @@ int main(){
     // print(head);
 
     // insert at head
-    // insertATHead(head, 12);
+    insertATHead(head, 12);
     // print(head);
 
-    // insertATHead(head , 15);
+    insertATHead(head , 15);
     // print(head);
-    // insertATHead(head , 22);
+    insertATHead(head , 22);
     // print(head);
 
 
@@ -263,9 +254,16 @@ int main(){
     
     insertAtTail(tail, 12);
     // print(head);
-    insertAtTail(tail, 15);
-    insertAtTail(tail, 12);
-    insertAtTail(tail, 15);
+    // insertAtTail(tail, 15);
+    // insertAtTail(tail, 12);
+    // insertAtTail(tail, 15);
+    print(head);
+    Node* sorted = uniqueSortedLL(tail);
+    Node* unSorted = uniqueSortedLL(head);
+    cout << " sorted : " <<  sorted << endl;
+    cout << " unSorted : " << unSorted << endl;
+    // uniqueSortedLL(tail);
+
    
    
     //inserting node at nth position
