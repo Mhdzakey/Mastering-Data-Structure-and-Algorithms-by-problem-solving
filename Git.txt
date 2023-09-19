@@ -1,0 +1,16 @@
+git status 
+git init 
+git clone 
+git log
+git log -p {all file with changes}
+git lop --one line
+git log --stat {only file name change}
+git add filename
+git commit -m "message"
+git branch
+git branch "brach name" creating branch
+git checkout brach --> switch to particular branch
+git tag
+git stash
+git merge
+git -am {add and commit both done}
