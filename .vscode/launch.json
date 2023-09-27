@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Zakey/Documents/GitHub/Mastering-Data-Structure-and-Algorithms-by-problem-solving/lecStack/problems",
-      "program": "c:/Users/Zakey/Documents/GitHub/Mastering-Data-Structure-and-Algorithms-by-problem-solving/lecStack/problems/build/Debug/outDebug",
+      "cwd": "c:/Users/Zakey/Documents/GitHub/Mastering-Data-Structure-and-Algorithms-by-problem-solving/lecTree",
+      "program": "c:/Users/Zakey/Documents/GitHub/Mastering-Data-Structure-and-Algorithms-by-problem-solving/lecTree/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
